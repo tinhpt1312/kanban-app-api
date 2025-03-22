@@ -15,6 +15,7 @@ export const ENV = {
 
   COOKIE: {
     ACCES_TOKEN_TIME: process.env.COOKIE_ACCESS_TOKEN_EXPIRATION_TIME,
+    ACCESS_TOKEN_NAME: process.env.COOKIE_ACCESS_TOKEN_NAME,
   },
 
   HTTPS: {

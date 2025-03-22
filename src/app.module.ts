@@ -1,7 +1,19 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostgresConfiguration } from './config';
+import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
-  imports: [],
+  imports: [
+    TypeOrmModule.forRootAsync({
+      useClass: PostgresConfiguration,
+    }),
+    ConfigModule.forRoot({
+      isGlobal: false,
+    }),
+    AuthModule,
+  ],
   controllers: [],
   providers: [],
 })
