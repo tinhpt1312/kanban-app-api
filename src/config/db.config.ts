@@ -6,6 +6,7 @@ import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
 
 config();
 
+// Update the entities path in the DataSource configuration
 export default new DataSource({
   type: 'postgres',
   host: ENV.DATABASE.HOST,
@@ -13,9 +14,10 @@ export default new DataSource({
   username: ENV.DATABASE.USERNAME,
   password: ENV.DATABASE.PASSWORD,
   database: ENV.DATABASE.DATABASE,
-  entities: ['src/**/entities/*.entity{.ts,.js}'],
-  migrations: ['src/migrations/*{.ts,.js}'],
+  entities: ['dist/**/entities/*.entity.js'], // Changed from src to dist and .ts to .js
+  migrations: ['dist/migrations/*.js'], // Changed from src to dist and .ts to .js
   logging: false,
+  synchronize: false,
 });
 
 @Injectable()
@@ -30,10 +32,11 @@ export class PostgresConfiguration implements TypeOrmOptionsFactory {
       username: ENV.DATABASE.USERNAME,
       password: ENV.DATABASE.PASSWORD,
       database: ENV.DATABASE.DATABASE,
-      entities: ['src/**/entities/*.entity{.ts,.js}'],
-      migrations: ['src/migrations/*{.ts,.js}'],
+      entities: ['dist/**/entities/*.entity.js'], // Changed from src to dist and .ts to .js
+      migrations: ['dist/migrations/*.js'], // Changed from src to dist and .ts to .js
       logging: true,
       logger: 'advanced-console',
+      synchronize: false,
     };
   }
 }

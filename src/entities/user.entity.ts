@@ -6,6 +6,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
 import { Audit } from './audit';
 import { Role } from './role.entity';
 import { CardMember } from './card-member.entity';
