@@ -41,3 +41,8 @@ export enum Provider {
   LOCAL = 'local',
   GOOGLE = 'google',
 }
+
+export enum RoleEnum {
+  ADMIN = '1',
+  USER = '2',
+}
