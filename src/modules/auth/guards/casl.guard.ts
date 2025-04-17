@@ -29,7 +29,7 @@ export class CaslGuard implements CanActivate {
     const requiredPermissions = this.reflector.get<
       PossibleAbilities[] | undefined
     >(CHECK_PERMISSION_KEY, context.getHandler()) ?? [
-      [PermissionAction.MANAGE, SubjectName.all],
+      [PermissionAction.Manage, SubjectName.all],
     ];
 
     const { user } = context.switchToHttp().getRequest<IRequestWithPayload>();

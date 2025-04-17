@@ -15,3 +15,14 @@ export class RegisterDto {
   @IsNotEmpty()
   username!: string;
 }
+
+export class LoginDto {
+  @ApiProperty()
+  @IsEmail()
+  @IsNotEmpty()
+  email!: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  password!: string;
+}

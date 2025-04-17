@@ -11,11 +11,11 @@ export interface IRequestWithPayload extends Request {
 }
 
 export enum PermissionAction {
-  MANAGE = 'manage',
-  CREATE = 'create',
-  READ = 'read',
-  UPDATE = 'update',
-  DELETE = 'delete',
+  Manage = 'manage',
+  Read = 'read',
+  Create = 'create',
+  Update = 'update',
+  Delete = 'delete',
 }
 
 export enum SubjectName {
@@ -23,6 +23,11 @@ export enum SubjectName {
   user = 'user',
   role = 'role',
   permission = 'permission',
+  board = 'board',
+  list = 'list',
+  card = 'card',
+  comment = 'comment',
+  attachment = 'attachment',
 }
 
 export interface GoogleProfile {
@@ -30,6 +35,11 @@ export interface GoogleProfile {
   email: string;
   avatar: string;
   provider: string;
+}
+
+export enum UserCodeType {
+  REGISTER = 'register',
+  RESET_PASSWORD = 'reset_password',
 }
 
 export enum UserCodeExpiration {

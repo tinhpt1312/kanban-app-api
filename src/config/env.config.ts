@@ -40,8 +40,11 @@ export const ENV = {
 
   JWT: {
     SECRET: process.env.JWT_SECRET,
-    EXPIRES_IN_WEB: process.env.JWT_EXPIRES_IN_WEB,
-    EXPIRES_IN_CLI: process.env.JWT_EXPIRES_IN_CLI,
+    EXPIRES: process.env.JWT_EXPIRES,
     COOKIE_NAME: process.env.JWT_COOKIE_NAME,
+  },
+
+  URL: {
+    REDIRECT: process.env.URL_REDERECT,
   },
 };
