@@ -47,4 +47,14 @@ export const ENV = {
   URL: {
     REDIRECT: process.env.URL_REDERECT,
   },
+
+  S3: {
+    ACCESS_KEY: process.env.AWS_ACCESS_KEY_ID,
+    SECRET_KEY: process.env.AWS_SECRET_ACCESS_KEY,
+    REGION: process.env.AWS_REGION,
+    BUCKET: process.env.AWS_BUCKET_NAME,
+    FOLDER: process.env.AWS_ROOT_FOLDER,
+    URL_EXPIRATION: process.env.AWS_S3_PRESIGNED_URL_EXPIRATION,
+    URL: process.env.AWS_S3_URL,
+  },
 };
