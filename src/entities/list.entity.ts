@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import { Board } from './board.entity';
 import { Card } from './card.entity';
+import { Audit } from './audit';
 
 @Entity({ name: 'lists', schema: 'public' })
 export class List {
@@ -54,4 +55,7 @@ export class List {
 
   @OneToMany(() => Card, (card) => card.list)
   cards!: Card[];
+
+  @Column(() => Audit, { prefix: false })
+  audit!: Audit;
 }

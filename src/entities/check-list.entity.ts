@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import { Card } from './card.entity';
 import { ChecklistItem } from './checklist-item.entity';
+import { Audit } from './audit';
 
 @Entity({ name: 'check_lists', schema: 'public' })
 export class CheckList {
@@ -30,4 +31,7 @@ export class CheckList {
 
   @OneToMany(() => ChecklistItem, (item) => item.checklist)
   items!: ChecklistItem[];
+
+  @Column(() => Audit, { prefix: false })
+  audit!: Audit;
 }

@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { CheckList } from './check-list.entity';
+import { Audit } from './audit';
 
 @Entity({ name: 'checklists_items', schema: 'public' })
 export class ChecklistItem {
@@ -36,4 +37,7 @@ export class ChecklistItem {
 
   @Column({ name: 'is_completed', type: 'boolean', default: false })
   isCompleted!: boolean;
+
+  @Column(() => Audit, { prefix: false })
+  audit!: Audit;
 }
